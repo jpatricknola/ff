@@ -6,6 +6,7 @@ We are clustering players in to tiers based on average expert rankings for the d
 Using the KMeans algorithm which requires us to input the number of clusters
 so we use silhoutte analysis to determine what number of clusters to input
 '''
+
 import pandas as pd
 from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans
