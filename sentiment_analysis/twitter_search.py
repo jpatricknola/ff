@@ -50,4 +50,3 @@ def generate_tweets(player_names, analysts=config.ANALYSTS):
   
   return parsed_tweets
   
-print(generate_tweets(['Michael Thomas']))
