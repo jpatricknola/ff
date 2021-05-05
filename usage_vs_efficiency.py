@@ -67,3 +67,15 @@ plot = sns.regplot(
 x=rb_df['Usage/GM'],
 y=rb_df['FantasyPoints/GM'],
 scatter=True,)
+
+# see correlation of efficiencyt to fantasy football performance
+rb_df['Efficiency'] = (rb_df['RushingTD']+ rb_df['ReceivingTD'])/(rb_df['RushingAtt'] + rb_df['Tgt'])
+fig, ax = plt.subplots()
+fig.set_size_inches(15, 10)
+
+#Make sure there is an adequete sample size
+rb_df = rb_df[rb_df['RushingAtt'] > 20]
+plot = sns.regplot(
+x=rb_df['Efficiency'],
+y=rb_df['FantasyPoints/GM'],
+scatter=True)
