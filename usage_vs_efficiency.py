@@ -75,6 +75,8 @@ fig.set_size_inches(15, 10)
 
 #Make sure there is an adequete sample size
 rb_df = rb_df[rb_df['RushingAtt'] > 20]
+
+#plot that shit
 plot = sns.regplot(
 x=rb_df['Efficiency'],
 y=rb_df['FantasyPoints/GM'],
