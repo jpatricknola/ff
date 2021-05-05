@@ -1,11 +1,9 @@
+# Expert Consensus Rankings are an average of rankings from a large amount of experts 
+# for each player for a given season or week. 
+# We are clustering players into tiers based on average expert rankings for the draft.
+# Using the KMeans algorithm which requires us to input the number of clusters
+# so we use silhoutte analysis to determine what number of clusters to input
 
-'''
-Expert Consensus Rankings are an average of rankings from a large amount of experts 
-for each player for a given season or week. 
-We are clustering players in to tiers based on average expert rankings for the draft.
-Using the KMeans algorithm which requires us to input the number of clusters
-so we use silhoutte analysis to determine what number of clusters to input
-'''
 
 import pandas as pd
 from sklearn.metrics import silhouette_score
@@ -30,13 +28,12 @@ num_roster_spots = 16
 draft_pool = num_teams * num_roster_spots + 20
 df = df[:draft_pool]
 
-'''
-Use silhouette analysis to determine the k value (number of clusters) to be used for KMeans algorithm 
-The silhouette value is a measure of how similar an object is to its own cluster (cohesion) 
-compared to other clusters (separation). 
-The silhouette ranges from −1 to +1, higher value indicates that the object 
-is well matched to its own cluster and poorly matched to neighboring clusters.
-'''
+
+# Use silhouette analysis to determine the k value (number of clusters) to be used for KMeans algorithm 
+# The silhouette value is a measure of how similar an object is to its own cluster (cohesion) 
+# compared to other clusters (separation). 
+# The silhouette ranges from −1 to +1, higher value indicates that the object 
+# is well matched to its own cluster and poorly matched to neighboring clusters.
 
 avgs = []
 
